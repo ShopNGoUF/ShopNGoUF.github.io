@@ -1,6 +1,6 @@
 html {
   background-color: white;
-  background: url(bg.jpg);
+  background: url(../IMGS/bg.jpg);
   background-size: cover;
 }
 
@@ -38,7 +38,7 @@ main {
   left: 0 auto;
   right: 0 auto;
   margin: 0 auto;
-  background: url(shop_n_go_1.png);
+  background: url(../IMGS/logo.png);
   background-size: contain;
   border-color: white;
   border-style: solid;
