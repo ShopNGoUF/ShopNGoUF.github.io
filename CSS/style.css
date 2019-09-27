@@ -113,6 +113,10 @@ footer{
     display: none;
   }
 
+#headernav{
+  font-family: 'Source Code Pro', monospace;
+}
+
   #headernav a {
     color: white;
     list-style: none;
@@ -120,15 +124,21 @@ footer{
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
+    text-indent: 7px;
+  }
+
+  li:hover{
+    text-decoration: none;
   }
 
   #headernav li {
     margin: 10%;
     text-align: center;
-    letter-spacing: 10px;
-    text-indent: 10px;
     font-size: 22px;
     padding: 10px;
+    letter-spacing: 7px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
   }
 
   header {
