@@ -1,0 +1,140 @@
+html {
+  background-color: white;
+  background: url(bg.jpg);
+  background-size: cover;
+}
+
+main {
+  background: rgba(0, 0, 0, 0.75);
+  width: 50%;
+  height: 600px;
+  left: 0 auto;
+  right: 0 auto;
+  margin: 0 auto;
+  border-style: solid;
+  border-color: white;
+  color: white;
+}
+
+aside {
+  background: rgba(0, 0, 0, 0.75);
+  width: 300px;
+  border-style: solid;
+  border-color: white;
+}
+
+main p {
+  margin: 5%;
+  font-size: 20px;
+}
+
+main {
+  text-align: center;
+}
+
+#logo {
+  width: 150px;
+  height: 150px;
+  left: 0 auto;
+  right: 0 auto;
+  margin: 0 auto;
+  background: url(shop_n_go_1.png);
+  background-size: contain;
+  border-color: white;
+  border-style: solid;
+  border-width: thick;
+  border-radius: 30px;
+}
+
+#wrapper {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#midWrap {
+  display: flex;
+}
+
+#asidenav {
+  color: white;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+}
+
+#asidenav a {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#asidenav li :hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0%;
+}
+
+ul :hover {
+  border-color: white;
+  text-decoration: underline;
+}
+
+li {
+  margin: 10%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-style: solid;
+  border-color: white;
+}
+
+header {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  #logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  #sida {
+    display: none;
+  }
+
+  #headernav a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  #headernav li {
+    margin: 10%;
+    text-align: center;
+    letter-spacing: 10px;
+    text-indent: 10px;
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  header {
+    display: block;
+    width: 100%;
+  }
+
+  main {
+    width: 80%;
+  }
+
+  #midWrap {
+    display: block;
+    flex-wrap: nowrap;
+  }
+}
