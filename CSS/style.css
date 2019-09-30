@@ -137,6 +137,24 @@ main{
     height: 200px;
   }
 
+#vd{
+  width: 30%;
+  margin-top: 10%;
+}
+
+#fotoWrap{
+  display:flex;
+  flex-wrap: wrap;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 20%;
+}
+
+.foto{
+  width: 35%;
+  margin: 0 auto;
+}
+
   #sida {
     display: none;
   }
