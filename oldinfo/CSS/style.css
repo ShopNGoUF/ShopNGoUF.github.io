@@ -1,0 +1,221 @@
+html {
+  background-color: white;
+  background: url(../IMGS/bg.jpg);
+  background-size: cover;
+
+}
+
+main {
+  background: rgba(0, 0, 0, 0.75);
+  width: 50%;
+  height: 600px;
+  left: 0 auto;
+  right: 0 auto;
+  margin: 0 auto;
+  border-style: solid;
+  border-color: white;
+  color: white;
+  text-align: center;
+}
+
+aside {
+  background: rgba(0, 0, 0, 0.75);
+  width: 300px;
+  border-style: solid;
+  border-color: white;
+}
+
+main p {
+  margin: 5%;
+  font-size: 20px;
+}
+
+
+#logo {
+  width: 150px;
+  height: 150px;
+  left: 0 auto;
+  right: 0 auto;
+  margin: 0 auto;
+  background: url(../IMGS/logo.png);
+  background-size: contain;
+  border-color: white;
+  border-style: solid;
+  border-width: thick;
+  border-radius: 30px;
+}
+
+#wrapper {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#midWrap {
+  display: flex;
+
+}
+
+#asidenav {
+  color: white;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Source Code Pro', monospace;
+}
+
+#asidenav a {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+#asidenav li :hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0%;
+}
+
+ul :hover {
+  border-color: white;
+  text-decoration: underline;
+}
+
+li {
+  margin: 10%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-style: solid;
+  border-color: white;
+}
+
+header {
+  display: none;
+}
+
+footer{
+  display: none;
+  background: rgba(0, 0, 0, 0.75);
+  border-style: solid;
+  border-color: white;
+}
+
+@media screen and (min-width: 1370px) {
+
+#sida{
+
+height: 800px;
+
+}
+
+
+#asidenav li{
+  padding: 5%;
+  text-align: center;
+}
+
+main{
+  width:80%;
+  height: 800px;
+}
+
+
+
+#wrapper{
+
+}
+
+}
+
+
+@media screen and (max-width: 700px) {
+  #logo {
+    width: 200px;
+    height: 200px;
+  }
+
+#vd{
+  width: 30%;
+  margin-top: 10%;
+}
+
+#fotoWrap{
+  display:flex;
+  flex-wrap: wrap;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 20%;
+}
+
+.foto{
+  width: 35%;
+  margin: 0 auto;
+}
+
+  #sida {
+    display: none;
+  }
+
+#headernav{
+  font-family: 'Source Code Pro', monospace;
+}
+
+  #headernav a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-indent: 7px;
+  }
+
+  li:hover{
+    text-decoration: none;
+  }
+
+  #headernav li {
+    margin: 10%;
+    text-align: center;
+    font-size: 22px;
+    padding: 10px;
+    letter-spacing: 7px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+  }
+
+  header {
+    display: block;
+    width: 100%;
+  }
+
+  main {
+    width: 95%;
+  }
+
+  #midWrap {
+    display: block;
+    flex-wrap: nowrap;
+  }
+
+  footer{
+    display: block;
+    width: 95%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    padding-top: 3%;
+  }
+
+  footer a{
+    color: white;
+  }
+
+  footer h6{
+    margin-bottom: 2%;
+
+  }
+}
