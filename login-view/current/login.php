@@ -3,12 +3,13 @@ session_start();
 
 require('dbconnect.php');
 
-$user=$_GET['username'];
-$pass=$_GET['password'];
+$unsanitizedUser=$_GET['username'];
+$unsanitizedPass=$_GET['password'];
 
 $dbcon= new dbconnect();
 
-// $search_html = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
+$cleanUser = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
+$cleanPass = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
 
 $stmt=$dbcon->pdo->query('SELECT * FROM users WHERE username=":user" and password=":pass"');
 $stmt->execute(['user' => $user, 'pass' => $pass]);
