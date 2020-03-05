@@ -10,17 +10,10 @@ $dbcon= new dbconnect();
 
 // $search_html = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
 
-$stmt=$dbcon->pdo->query('SELECT * FROM users WHERE username=".$user." and password=".$pass."'); //TOTAL CONFUSION
-$stmt->execute();
+$stmt=$dbcon->pdo->query('SELECT * FROM users WHERE username=":user" and password=":pass"');
+$stmt->execute(['user' => $user, 'pass' => $pass]);
 
 // echo password_hash("password", PASSWORD_DEFAULT); //använd nåt sånt här för att hasha lösenordet
-
-// $stmt = $pdo->prepare('SELECT * FROM users WHERE username = :email AND password=".$pass."'); //detta ska vara ett bättre sätt att logga in för att skydda sig mot SQL-injektioner
-// $stmt->execute(['email' => $email, 'status' => $status]);
-// $user = $stmt->fetch();
-//
-// $stmt = $pdo->prepare('SELECT * FROM users WHERE username = ".$user." AND password=".$pass."');
-// $stmt->execute(["$user." => username, ".$pass." => password]);
 
 while($row=$stmt->fetch()){
 echo $row['username'].' ';
