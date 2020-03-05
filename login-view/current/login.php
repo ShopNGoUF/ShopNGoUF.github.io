@@ -8,8 +8,8 @@ $unsanitizedPass=$_GET['password'];
 
 $dbcon= new dbconnect();
 
-$cleanUser = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
-$cleanPass = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);
+$cleanUser = filter_input(INPUT_GET, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
+$cleanPass = filter_input(INPUT_GET, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
 
 $stmt=$dbcon->pdo->query('SELECT * FROM users WHERE username=":user" and password=":pass"');
 $stmt->execute(['user' => $user, 'pass' => $pass]);
@@ -24,7 +24,7 @@ echo '<br>';
   if($user==$row['username'] && $pass==$row['password']){
 
     $_SESSION["usersession"]=$user;
-    header('Location: inloggad.php'); //GÖR DEN HÄR RELEVANT
+    header('Location: landningssida.php'); //GÖR DEN HÄR RELEVANT
 
   }
 
