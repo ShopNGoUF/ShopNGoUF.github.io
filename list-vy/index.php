@@ -41,17 +41,11 @@
 
             foreach ($loadListModel->get() as $listor) { // Här krävs loadlistmodel som ett objekt/en variabel så man kan köra foreach på den
 
-              echo "<a href='www.google.se'><h1>".$listor.['Cart_Namn']."</h1></a>";
+              //echo "<a href='www.google.se'><h1>".$listor.['cart_namn']."</h1></a>";
+              echo $listor['cart_namn'];
 
             }
 
-            // foreach($postmodel->get() as $post){
-            //   echo "<li id='rubrik'>"."<h1>".$post['rubrik']."</h1>"."</li>"; /* har gett dom id för att kunna fixa css */
-            //   echo "<li id='bild'>". "<img src=".'./bilder/'.$post['bild'].">"."</img>"."</li>";
-            //   echo "<li id='text'>".$post['text']."</li>";
-            //
-            //   echo "<br>";
-            // }
            ?>
 
   </div>

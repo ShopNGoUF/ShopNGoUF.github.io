@@ -1,16 +1,20 @@
 <?php
 
 class DB{
+
+
+  private $pdo=null;
+  private $stmt=null;
 function __construct(){
 
   $servername = "localhost";
-  $username = "shopngo";
-  $password = "AmpAltRalte";
+  $username = "root"; //shopngo
+  $password = ""; //AmpAltRalte
 
   try{
-    $conn = new PDO("mysql:host=$servername;dbname=shopngo", $username, $password);
+    $this->pdo = new PDO("mysql:host=$servername;dbname=mvctemplate" /*shopngo*/, $username, $password);
       // set the PDO error mode to exception
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       echo "Connected successfully";
       }
 
@@ -25,7 +29,7 @@ function __construct(){
     function select($sql, $cond=null){
       $result = false;
       try {
-        $this->stmt = $this->prepare($sql);
+        $this->stmt = $this->pdo->prepare($sql);
         $this->stmt->execute($cond);
         $result = $this->stmt->fetchAll();
 
