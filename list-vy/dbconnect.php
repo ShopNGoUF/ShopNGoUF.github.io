@@ -8,11 +8,11 @@ class DB{
 function __construct(){
 
   $servername = "localhost";
-  $username = "root"; //shopngo
-  $password = ""; //AmpAltRalte
+  $username = "shopngo"; //shopngo
+  $password = "AmpAltRalte"; //AmpAltRalte
 
   try{
-    $this->pdo = new PDO("mysql:host=$servername;dbname=mvctemplate" /*shopngo*/, $username, $password);
+    $this->pdo = new PDO("mysql:host=$servername;dbname=shopngo" /*shopngo*/, $username, $password);
       // set the PDO error mode to exception
       $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       echo "Connected successfully";

@@ -1,3 +1,6 @@
+<?php
+    require 'loadListModel.php';
+ ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,54 +9,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Listor</title>
   </head>
   <body>
-    <div class="container text-light">
 
-      <div class="row color-light">
-        <h1 class="color-white">Välkommen ....</h1>
+<div class="container">
+    <div class="row text-light p-3">
+      <div class="col-12">
+        <h3 class="display-4 text-center">
+          Välkommen!
+        </h3>
       </div>
-      <div class="row">
-        <h2>Listor listas nedanför</h2>
-      </div>
-
-      <div class="row">
-
-        <div class="col-12">
-
-        <button class="btn btn-lg btn-light "type="button" name="button">Lista X</button>
-        </div>
-      </div>
-
-      <div class="row jumbotron text-dark">
-
-          <?php
-
-          session_start();
-
-          require 'loadListModel.php';
-
-          $loadListModel = new loadListModel(); //Här kopplas klassen loadListModel från den andra filen till den här och lagras som en variabel. Senare körs funktionen i loadListModel.php
-
-
-            foreach ($loadListModel->get() as $listor) { // Här krävs loadlistmodel som ett objekt/en variabel så man kan köra foreach på den
-
-              //echo "<a href='www.google.se'><h1>".$listor.['cart_namn']."</h1></a>";
-              echo $listor['cart_namn'];
-
-            }
-
-           ?>
-
-  </div>
-
-
-
-
     </div>
+
+
+
+    <?php
+    $loadListModel = new loadListModel(); //Här kopplas klassen loadListModel från den andra filen till den här och lagras som en variabel. Senare körs funktionen i loadListModel.php
+      foreach ($loadListModel->get() as $listor) { // Här krävs loadlistmodel som ett objekt/en variabel så man kan köra foreach på den
+
+
+        // Printar ut knapparna i columner som bestämmer storlek w-100
+        echo '<div class="row text-center p-2 ">';
+        echo '<div class="col-12">';
+        echo '<form class="" action="cart.php" method="post">';
+        echo '<input type="hidden" name="list_id" value=" ';
+        echo $listor['Cart_ID'] . ' "> '; //Hämtar list_pk för att sedan koppla knappen till rätt lista.
+        echo '<button type="submit" class="btn btn-lg btn-light w-100 p-3" name="button">';
+        echo $listor['Cart_Namn']; //Hämtar värdet från Cart_Namn varje varv i foreach-loopen
+        echo '</button>';
+        echo '</form>';
+        echo "</div>";
+        echo "</div>";
+
+
+      }
+       ?>
+
+
+       <div class="row text-center">
+
+         <div class="col-12">
+
+           <div class="jumbotron mt-5">
+
+             Ovan visas dem köplistor du är medlem i, vill du gå med i en till är det bara att skriva in koden i rutan ovan!
+
+           </div>
+
+         </div>
+
+       </div>
+
+</div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
